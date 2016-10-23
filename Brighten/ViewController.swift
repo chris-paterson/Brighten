@@ -30,6 +30,11 @@ class ViewController: UIViewController {
         setupInstructionLabel()
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
+    
     func setupInstructionLabel() {
         instruction.text = "Tap Screen to Brighten"
         instruction.textColor = UIColor.white
@@ -46,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func incrementBackgroundColour() {
-        greyscaleLevel += 0.1
+        greyscaleLevel += 0.05
     }
     
     func removeInstruction() {
