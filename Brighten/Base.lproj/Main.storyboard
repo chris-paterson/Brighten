@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,12 +18,28 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap Screen to Brighten" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="juS-Er-PZY">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="juS-Er-PZY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KBU-kY-fRa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="juS-Er-PZY" secondAttribute="trailing" id="d2U-JR-3cQ"/>
+                            <constraint firstItem="juS-Er-PZY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="j4h-qk-C1L"/>
+                            <constraint firstItem="juS-Er-PZY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="s0L-hz-60M"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="8b0-Qr-MYg" appends="YES" id="JmR-95-sNp"/>
                         </connections>
                     </view>
+                    <connections>
+                        <outlet property="instruction" destination="juS-Er-PZY" id="yP7-b5-JE5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="8b0-Qr-MYg">
@@ -31,6 +48,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="63.418290854572717"/>
         </scene>
     </scenes>
 </document>

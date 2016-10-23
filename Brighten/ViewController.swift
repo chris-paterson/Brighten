@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var instruction: UILabel!
     
     private var _greyscaleLevel: Float = 0
     var greyscaleLevel: Float {
@@ -26,6 +27,12 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(white: CGFloat(_greyscaleLevel), alpha: 1.0)
+        setupInstructionLabel()
+    }
+    
+    func setupInstructionLabel() {
+        instruction.text = "Tap Screen to Brighten"
+        instruction.textColor = UIColor.white
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,11 +41,18 @@ class ViewController: UIViewController {
     }
     
     @IBAction func screenTap(_ sender: AnyObject) {
+        removeInstruction()
         incrementBackgroundColour()
     }
     
     func incrementBackgroundColour() {
         greyscaleLevel += 0.1
+    }
+    
+    func removeInstruction() {
+        if !instruction.isHidden {
+            instruction.isHidden = true
+        }
     }
     
     
